@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="robot_scara">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-1.2267E-15 -8.8518E-17 0.08122"
+        rpy="0 0 0" />
+      <mass
+        value="20.674" />
+      <inertia
+        ixx="0.81865"
+        ixy="2.453E-17"
+        ixz="-1.5176E-15"
+        iyy="0.81865"
+        iyz="-1.5583E-16"
+        izz="0.33768" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_scara/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_scara/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_1">
+    <inertial>
+      <origin
+        xyz="0.24287 1.7832E-08 0.063836"
+        rpy="0 0 0" />
+      <mass
+        value="55.084" />
+      <inertia
+        ixx="0.13635"
+        ixy="-5.3485E-06"
+        ixz="-0.055982"
+        iyy="1.6655"
+        iyz="-4.0985E-07"
+        izz="1.6686" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_scara/meshes/link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.27843 0.42745 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_scara/meshes/link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.49012"
+      rpy="0 0 0.57061" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.142"
+      upper="3.142"
+      effort="200"
+      velocity="10" />
+  </joint>
+  <link
+    name="link_2">
+    <inertial>
+      <origin
+        xyz="0.2228 4.2564E-07 0.10437"
+        rpy="0 0 0" />
+      <mass
+        value="68.429" />
+      <inertia
+        ixx="0.27322"
+        ixy="-7.6394E-06"
+        ixz="0.08493"
+        iyy="1.397"
+        iyz="1.6153E-06"
+        izz="1.2904" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_scara/meshes/link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_scara/meshes/link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2"
+    type="revolute">
+    <origin
+      xyz="0.5 0 0.079884"
+      rpy="0 0 -1.3859" />
+    <parent
+      link="link_1" />
+    <child
+      link="link_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.142"
+      upper="3.142"
+      effort="200"
+      velocity="10" />
+  </joint>
+  <link
+    name="link_3">
+    <inertial>
+      <origin
+        xyz="0.00086242 3.3307E-16 0.12155"
+        rpy="0 0 0" />
+      <mass
+        value="13.036" />
+      <inertia
+        ixx="0.46124"
+        ixy="1.3878E-17"
+        ixz="0.00064441"
+        iyy="0.46091"
+        iyz="-1.0542E-15"
+        izz="0.0080684" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_scara/meshes/link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.49804 0.88627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_scara/meshes/link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_3"
+    type="prismatic">
+    <origin
+      xyz="0.45 0 0"
+      rpy="3.1416 0 0" />
+    <parent
+      link="link_2" />
+    <child
+      link="link_3" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.2"
+      upper="0.2"
+      effort="200"
+      velocity="3" />
+  </joint>
+</robot>
